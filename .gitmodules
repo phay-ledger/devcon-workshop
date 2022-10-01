@@ -1,3 +1,6 @@
 [submodule "speculos"]
 	path = speculos
 	url = git@github.com:LedgerHQ/speculos.git
+[submodule "web3-insight"]
+	path = web3-insight
+	url = git@github.com:IAmMorrow/web3-insight.git
