@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdbool.h": "c",
+        "ethutils.h": "c",
+        "ethustream.h": "c",
+        "stdint.h": "c"
+    }
+}
