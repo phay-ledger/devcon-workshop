@@ -5,10 +5,10 @@ SPECULOS_URL="http://127.0.0.1:5042/apdu"
 
 def format_for_nano(simulation: dict[str]) -> str:
     # TODO: parse simu answer and only extract balance or idk.  
-    return b"salam khouya  <3\npredictive balance = 21 ETH\nj'ai d'autres trucs a dire!!!"
+    return b"balance change: 0.3 ETH"
 
 def build_apdu(msg: str) -> str:
-    """
+    """ 
         Create apdu encoded string from a given message. 
         Prepend "oracle" to communicate with the ethereum-app loaded in speculos.
 
