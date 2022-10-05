@@ -1,6 +1,9 @@
 # Welcome to Ledger's Workshop for ETH Bogota :colombia:
 
-Everyone's welcome! Please feel free to join whether you are an app builder, an Ethereum enthusiast, or a curious flaneur.
+Everyone's welcome!
+
+
+Please feel free to join whether you are an app builder, an Ethereum enthusiast, or a curious flaneur.
 
 ## Program
 
@@ -8,7 +11,7 @@ Everyone's welcome! Please feel free to join whether you are an app builder, an 
 * Load the binary in [Speculos](https://github.com/LedgerHQ/speculos), the Ledger OS device emulator.
 * Simulate some transactions on EVM and print the result on the device screen.
 
-We will run the simulations on the Ledger Ethereum Node for the workshop, but you can use an Infura or Quicknode setup. Read this [blog post](https://blog.ledger.com/the-millennium-problem/) for more information.
+We will run the simulations on the Ledger Ethereum Node for the workshop, but you can use a Quicknode setup or any provider supporting `debug_traceCall`. Read this [blog post](https://blog.ledger.com/the-millennium-problem/) for more information.
 
 
 ## Workshop Architecture
@@ -42,7 +45,7 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
     `cd speculos && docker build -t speculos .`
 
-2) Run Speculoas container, mounting the apps folder and running the Ethereum app
+2) Run Speculos container, mounting the apps folder and running the Ethereum app
 
     `docker run --rm -it -v "$(pwd)"/apps:/speculos/apps \
 -p 1234:1234 -p 5000:5000 -p 40000:40000 -p 41000:41000 speculos \
@@ -52,9 +55,7 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 ## Transactions Simulation
 
-1) Run locally the web3-insight project
-
-    `cd web3-insight && yarn install && pnpm run start:dev`
+1) Run locally the web3-insight project: `cd web3-insight && yarn install && pnpm run start:dev`
 
 2) Explore & Learn from the `devcon-workshop/transactions_simulation` python repository
 
