@@ -5,7 +5,7 @@ from web3 import Web3
 import requests
 
 
-WEB3_INSIGHTS_URL="http://localhost:3000/api/check/transaction"
+WEB3_INSIGHT_URL="http://localhost:3000"
 
 def _simulate(transaction: dict, block: str = "latest", tracer: str = None) -> Optional[str]:
     """
@@ -43,26 +43,19 @@ def _simulate(transaction: dict, block: str = "latest", tracer: str = None) -> O
 def simulate_the_hard_way(transaction, block="latest") -> str:
     return _simulate(transaction, block)
 
-def simmulate_with_call_tracer(transaction, block="latest") -> str:
+def simulate_with_call_tracer(transaction, block="latest") -> str:
     return _simulate(transaction, block, tracer="callTracer")
 
 def simulate_like_a_boss(transaction: dict, chain_id=1) -> str:
+    simulation_endpoint = f"{WEB3_INSIGHT_URL}/api/check/transaction"
+    transaction["chainId"] = chain_id
     payload = {
 	    "includeEvents": True,
 	    "includeContracts": True,
-	    "transaction": {
-        "from": transaction["from"],
-        "to": transaction["to"],
-        "data": transaction["data"],
-        "gas": transaction["gas"],
-        "maxFeePerGas": transaction["maxFeePerGas"],
-        "maxPriorityFeePerGas": transaction["maxPriorityFeePerGas"],
-        "nonce": transaction["nonce"],
-        "chainId": chain_id
-      }
+	    "transaction": transaction,
 	}
-    response = requests.post(WEB3_INSIGHTS_URL, json=payload)
-    return response.text
+    simulation_response = requests.post(simulation_endpoint, json=payload)
+    return simulation_response.text
 
 
     

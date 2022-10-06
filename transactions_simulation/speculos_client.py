@@ -4,8 +4,8 @@ SPECULOS_URL="http://127.0.0.1:5042/apdu"
 
 
 def format_for_nano(simulation: dict[str]) -> str:
-    # TODO: parse simu answer and only extract balance or idk.  
-    return b"balance change: 0.3 ETH"
+    # TODO: parse simulation answer
+    return b"(ENS) from maninthecenter.eth\n(ENS) to rektverse.eth"
 
 def build_apdu(msg: str) -> str:
     """ 
@@ -15,7 +15,7 @@ def build_apdu(msg: str) -> str:
         @param msg: insightful message from the transaction simulation
     """
     msg = len(msg).to_bytes(1, "big") + msg
-    raw_apdu     = bytes.fromhex(
+    raw_apdu = bytes.fromhex(
         "058000002c8000003c800000000000000000000000eb808502faf0800082520894fe470ea311dbde1726f467081671e4410aa8952287038d7ea4c6800080018080"
     )
     payload = b"\x01oracle" + msg + raw_apdu

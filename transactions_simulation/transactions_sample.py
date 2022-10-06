@@ -9,6 +9,17 @@ aave_deposit = {
 }
 
 
+ens_transfer = {
+    "from": "0x52495763163cf0F9223a271c5CfaD0D739bA4c12", # maninthecenter.eth
+    "to": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
+    "data": "0x42842e0e00000000000000000000000052495763163cf0f9223a271c5cfad0d739ba4c1200000000000000000000000052495763163cf0f9223a271c5cfad0d739ba4c12946a05cf7ccc5699bb9da3edf24dc1cbf5d24c9a2cb8f658d807fa915d6ad979",
+    "gas": "0x11e4f",
+	"maxFeePerGas": "0x1b3dbe5200",
+	"maxPriorityFeePerGas": "0x1b3dbe5200",
+	"nonce": "0x19b"
+}
+
+
 getBalanceOf_dai_transaction = {
     "to": "0x6b175474e89094c44da98b954eedeac495271d0f", # Dai contract address
     "data": "0x70a082310000000000000000000000006E0d01A76C3Cf4288372a29124A26D4353EE51BE", # contract input data
