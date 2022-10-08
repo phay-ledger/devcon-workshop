@@ -11,19 +11,18 @@ from transactions_sample import *
 def main():
 
     unsigned_transaction_payload = ens_transfer
-    separator = "*" * 50
 
     # STEP 1: Hello World transaction simulation
     raw_op_codes = simulate_the_hard_way(unsigned_transaction_payload)
     print(raw_op_codes)
 
     # STEP 2: WTF is tracing ??
-    print(separator)
+    print("*" * 50)
     traced_simulation = simulate_with_call_tracer(unsigned_transaction_payload)
     print(traced_simulation)
 
     # STEP 3: Activable insights from simulation
-    print(separator)
+    print("*" * 50)
     smart_simulation = simulate_like_a_boss(unsigned_transaction_payload)
     print(smart_simulation)
 
