@@ -24,7 +24,7 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 1) Build the app builder docker image. The app builder contains the environment mostly nano* SDKs and their dependencies:
 
-    `cd ledger-app-builder && docker build -f Dockerfile<.m1> -t app-builder`
+    `cd ledger-app-builder && docker build -f Dockerfile<.m1> -t app-builder .`
 
 2) Run the app builder container, mounting the Ethereum nano application to build:
 
