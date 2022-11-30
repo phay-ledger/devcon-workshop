@@ -43,11 +43,11 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 1) Build Speculos container
 
-    `cd speculos && docker build -t speculos .`
+    `docker build -t speculos speculos/`
 
 2) Run Speculos container, mounting the apps folder and running the Ethereum app
 
-    `docker run --rm -it -v "$(pwd)"/apps:/speculos/apps -p 1234:1234
+    `docker run --rm -it -v "$(pwd)"/speculos/apps:/speculos/apps -p 1234:1234
      -p 5000:5000 -p 40000:40000 -p 41000:41000 speculos --model nanox ./apps/nanos-eth-oracle.elf --sdk 2.0 --seed "secret" --display headless --apdu-port 40000 --vnc-port 41000`
 
 ![speculos](docs/speculos.png)
