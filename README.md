@@ -3,11 +3,11 @@
 Everyone's welcome!
 
 
-Please feel free to join whether you are an app builder, an Ethereum enthusiast, or a curious flaneur.
+Please feel free to join whether you are an app builder, an Ethereum enthusiast, or just a curious flaneur.
 
 ## Program
 
-* Build a modified version of the nanoS+ Ethereum app
+* Build a modified version of the nano S+ Ethereum app
 * Load the binary in [Speculos](https://github.com/LedgerHQ/speculos), the Ledger OS device emulator.
 * Simulate some transactions on EVM and print the result on the device screen.
 
@@ -22,15 +22,15 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 ## Build the Nano S+ app
 
-1) Build the app builder docker image. The app builder contains the environment mostly nano* SDKs and their dependencies:
+1) Build the app builder docker image. The app builder contains mostly nano* SDKs and their dependencies:
 
-    `cd ledger-app-builder && docker build -f Dockerfile<.m1> -t app-builder .`
+    `docker build -f Dockerfile<.m1> -t app-builder .`
 
 2) Run the app builder container, mounting the Ethereum nano application to build:
 
-    `sudo docker run --rm -ti -v "</Full/path/to/this/repository>/app-Ethereum-oracle:/app" app-builder`
+    `sudo docker run --rm -it -v "</Full/path/to/this/repository>/app-Ethereum-oracle:/app" app-builder`
 
-3) Once inside the app-builder container, compile the nanos+ Ethereum app:
+3) Once inside the app-builder container, compile the nano S+ Ethereum app:
 
     `BOLOS_SDK=$NANOX_SDK make`
 
@@ -43,7 +43,7 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 1) Build Speculos container
 
-    `cd speculos && docker build -t speculos .`
+    `docker build -t speculos .`
 
 2) Run Speculos container, mounting the apps folder and running the Ethereum app
 
@@ -54,10 +54,11 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 ## Transactions Simulation
 
-1) Run locally the web3-insight project: `cd web3-insight && yarn install && pnpm run start:dev`
+1) Run locally the `web3-insight` project `yarn install && pnpm run start:dev` to give full power to the `guardian`
 
-2) Explore & Learn from the `devcon-workshop/transactions_simulation` python repository
+2) Download the `guardian` dependencies by running `pipenv sync` under `devcon-workshop/guardian`
 
-3) Download workshop dependencies: `pipenv sync`
+3) Setup your Ethereum node environment: `export NODE_URL=XXX && export NODE_AUTH=XXX`
 
-3) Play with simualtions: `pipenv run main.py`
+3) Wisely use the `guardian` to run simulations: `pipenv run guardian --help`
+

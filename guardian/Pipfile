@@ -6,3 +6,9 @@ verify_ssl = true
 
 [packages]
 web3 = "*"
+click = "*"
+rich = "*"
+
+
+[scripts]
+guardian = "python guardian.py"

@@ -5,7 +5,7 @@ from web3 import Web3
 import requests
 
 
-WEB3_INSIGHT_URL="http://localhost:3000"
+
 
 def _simulate(transaction: dict, block: str = "latest", tracer: str = None) -> Optional[str]:
     """
@@ -47,7 +47,8 @@ def simulate_with_call_tracer(transaction, block="latest") -> str:
     return _simulate(transaction, block, tracer="callTracer")
 
 def simulate_like_a_boss(transaction: dict, chain_id=1) -> str:
-    simulation_endpoint = f"{WEB3_INSIGHT_URL}/api/check/transaction"
+    web3_insight_url = os.getenv("WEB3_INSIGHT_URL", default="http://localhost:3000")
+    simulation_endpoint = f"{web3_insight_url}/api/check/transaction"
     transaction["chainId"] = chain_id
     payload = {
 	    "includeEvents": True,
