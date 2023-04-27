@@ -28,7 +28,7 @@ We will run the simulations on the Ledger Ethereum Node for the workshop, but yo
 
 2) Run the app builder container, mounting the Ethereum nano application to build:
 
-    `sudo docker run --rm -it -v "</Full/path/to/this/repository>/app-Ethereum-oracle:/app" app-builder`
+    `sudo docker run --rm -it -v "</Full/path/to/this/repository>/app-ethereum-oracle:/app" app-builder`
 
 3) Once inside the app-builder container, compile the nano S+ Ethereum app:
 

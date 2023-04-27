@@ -6,12 +6,11 @@ import requests
 
 
 
-
 def _simulate(transaction: dict, block: str = "latest", tracer: str = None) -> Optional[str]:
     """
-        Run debug_traceCall EVM primitive to simulate a transaction on a block state trie.
+        Run debug_traceCall EVM primitive to simulate a transaction on a block.
         
-        @param transaction: transaction JSON object to simulate. See samples in transaction.py.
+        @param transaction: transaction JSON object to simulate. See transaction_samples.py.
         @param block: block number to simulate the transaction in. Default is latest.
         @param tracer: JS tracer to transalated the raw opcodes to intelligble infos. Default is no tracer.
     """

@@ -24,7 +24,7 @@ def print_with_delimiter(content, delimiter="*"):
 @click.option("--speculos", is_flag=True, help="Print simulation result on the nano device emulator")
 def main(raw, trace_call, beautiful, speculos):
 
-    unsigned_transaction_payload = ens_transfer
+    unsigned_transaction_payload = paraswap_thief
     
     if raw:
         # STEP 1: Hello World transaction simulation

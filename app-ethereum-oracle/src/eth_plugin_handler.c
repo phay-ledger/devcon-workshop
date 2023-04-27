@@ -269,16 +269,16 @@ eth_plugin_result_t eth_plugin_call(int method, void *parameter) {
             END_TRY;
             break;
         }
-#ifdef HAVE_NFT_SUPPORT
-        case ERC721: {
-            erc721_plugin_call(method, parameter);
-            break;
-        }
-        case ERC1155: {
-            erc1155_plugin_call(method, parameter);
-            break;
-        }
-#endif  // HAVE_NFT_SUPPORT
+// #ifdef HAVE_NFT_SUPPORT
+//         case ERC721: {
+//             erc721_plugin_call(method, parameter);
+//             break;
+//         }
+//         case ERC1155: {
+//             erc1155_plugin_call(method, parameter);
+//             break;
+//         }
+// #endif  // HAVE_NFT_SUPPORT
         case OLD_INTERNAL: {
             // Perform the call
             for (i = 0;; i++) {

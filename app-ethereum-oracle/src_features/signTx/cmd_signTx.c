@@ -24,6 +24,8 @@ void handleSign(uint8_t p1,
     if (p1 == P1_FIRST) {
         if (dataLength < 1) {
             PRINTF("Invalid data\n");
+
+            // parameter in the data field are incorrect
             THROW(0x6a80);
         }
 
